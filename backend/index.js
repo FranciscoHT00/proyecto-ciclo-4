@@ -5,6 +5,7 @@ let bodyParser = require("body-parser");
 
 // Ruta de Express
 const userRoute = require("../backend/routes/user.route");
+const resourceRoute = require("../backend/routes/resource.route");
 
 // DB Config
 const db = require("../backend/database/db").mongoURI;
@@ -23,6 +24,7 @@ app.use(
 );
 app.use(cors());
 app.use("/users", userRoute);
+app.use("/resources", resourceRoute);
 
 // PORT
 const port = process.env.PORT || 4000;
