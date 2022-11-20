@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/proyecto-ciclo-4/static/css/main.c2c4fe95.css",
-    "main.js": "/proyecto-ciclo-4/static/js/main.d5341f34.js",
+    "main.js": "/proyecto-ciclo-4/static/js/main.e061b5a1.js",
     "index.html": "/proyecto-ciclo-4/index.html",
     "main.c2c4fe95.css.map": "/proyecto-ciclo-4/static/css/main.c2c4fe95.css.map",
-    "main.d5341f34.js.map": "/proyecto-ciclo-4/static/js/main.d5341f34.js.map"
+    "main.e061b5a1.js.map": "/proyecto-ciclo-4/static/js/main.e061b5a1.js.map"
   },
   "entrypoints": [
     "static/css/main.c2c4fe95.css",
-    "static/js/main.d5341f34.js"
+    "static/js/main.e061b5a1.js"
   ]
 }
