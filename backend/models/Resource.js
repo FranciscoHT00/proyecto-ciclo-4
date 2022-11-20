@@ -15,7 +15,10 @@ let resourceSchema = new Schema(
     price: {
       type: Number,
     },
-    seller: {
+    owner: {
+      type: String,
+    },
+    forSale: {
       type: String,
     },
   },

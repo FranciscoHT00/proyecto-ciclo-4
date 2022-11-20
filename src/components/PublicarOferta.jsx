@@ -17,7 +17,8 @@ export default class PublicarOferta extends Component {
       color: "",
       quantity: "",
       price: "",
-      seller: "",
+      owner: "",
+      forSale: "",
     };
   }
 
@@ -49,7 +50,8 @@ export default class PublicarOferta extends Component {
       color: this.state.color,
       quantity: this.state.quantity,
       price: this.state.price,
-      seller: this.state.seller,
+      owner: this.state.owner,
+      forSale: this.state.forSale,
     };
 
     axios
@@ -61,7 +63,8 @@ export default class PublicarOferta extends Component {
       color: "",
       quantity: "",
       price: "",
-      seller: "",
+      owner: "",
+      forSale: "",
     });
   }
   render() {
