@@ -124,7 +124,7 @@ export default class PublicarOferta extends Component {
           <Col>
             <Form>
               <h4>Descripción del producto:</h4>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <textarea name="" id="" cols="30" rows="30"></textarea>
             </Form>
           </Col>
         </Row>
