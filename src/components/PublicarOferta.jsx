@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Col, Container, Form, Row } from "react-bootstrap";
 
 export default class PublicarOferta extends Component {
   constructor(props) {
@@ -64,6 +65,70 @@ export default class PublicarOferta extends Component {
     });
   }
   render() {
-    return <div>PublicarOferta</div>;
+    return (
+      <Container fluid>
+        <Row>
+          <Col>
+            <Form>
+              <h4>Selecciona la categoría</h4>
+              <Form.Group>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="PET o PETE"
+                ></Form.Check>
+                <Form.Check type="radio" name="type" label="HDPE"></Form.Check>
+                <Form.Check type="radio" name="type" label="PVC"></Form.Check>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="LDPE o PEBD"
+                ></Form.Check>
+                <Form.Check type="radio" name="type" label="PP"></Form.Check>
+                <Form.Check type="radio" name="type" label="PS"></Form.Check>
+                <Form.Check type="radio" name="type" label="Otros"></Form.Check>
+              </Form.Group>
+            </Form>
+          </Col>
+
+          <Col>
+            <Form>
+              <Form.Group controlId="Color">
+                <Form.Label>Color:</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={this.state.color}
+                  onChange={this.onChangeResourceColor}
+                />
+              </Form.Group>
+
+              <Form.Group controlId="Cantidad">
+                <Form.Label>Cantida disponible (kg):</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={this.state.quantity}
+                  onChange={this.onChangeResourceQuantity}
+                />
+              </Form.Group>
+
+              <Form.Group controlId="Precio">
+                <Form.Label>Precio por kg:</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={this.state.color}
+                  onChange={this.onChangeResourceColor}
+                />
+              </Form.Group>
+            </Form>
+          </Col>
+          <Col>
+            <Form>
+              <h4>Descripción del producto:</h4>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    );
   }
 }
