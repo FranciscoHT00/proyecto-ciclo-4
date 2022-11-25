@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
 export default class PublicarOferta extends Component {
   constructor(props) {
@@ -122,12 +122,22 @@ export default class PublicarOferta extends Component {
                   onChange={this.onChangeResourceColor}
                 />
               </Form.Group>
+
+              <Button
+                variant="danger"
+                size="lg"
+                block="block"
+                type="submit"
+                className="mt-4"
+              >
+                Publicar Oferta
+              </Button>
             </Form>
           </Col>
           <Col>
             <Form>
               <h4>Descripción del producto:</h4>
-              <textarea name="" id="" cols="30" rows="30"></textarea>
+              <textarea name="" id="" cols="30" rows="15"></textarea>
             </Form>
           </Col>
         </Row>

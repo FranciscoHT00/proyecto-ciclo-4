@@ -1,13 +1,13 @@
-import React from 'react'
-import inicio from "../images/inicio.png"
-import "../index.css";
+import React from "react";
+import inicio from "../images/inicio.png";
+import "../css/index.css";
 
 const ComponenteInicio = () => {
   return (
     <div>
-      <img src={inicio} alt="inicio" />
+      <img src={inicio} alt="inicio" id="imgInicio" />
     </div>
-  )
-}
+  );
+};
 
-export default ComponenteInicio
+export default ComponenteInicio;
