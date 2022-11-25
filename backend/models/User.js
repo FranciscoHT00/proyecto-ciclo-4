@@ -21,6 +21,9 @@ let userSchema = new Schema(
     password: {
       type: String,
     },
+    balance: {
+      type: Number,
+    },
   },
   {
     collection: "users",

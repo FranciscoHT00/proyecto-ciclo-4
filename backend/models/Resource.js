@@ -19,7 +19,7 @@ let resourceSchema = new Schema(
       type: String,
     },
     forSale: {
-      type: String,
+      type: Number,
     },
   },
   {
