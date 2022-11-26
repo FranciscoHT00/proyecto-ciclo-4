@@ -10,15 +10,15 @@ export default class PublicarOferta extends Component {
     this.onChangeResourceColor = this.onChangeResourceColor.bind(this);
     this.onChangeResourceQuantity = this.onChangeResourceQuantity.bind(this);
     this.onChangeResourcePrice = this.onChangeResourcePrice.bind(this);
-    this.onChangeResourceSeller = this.onChangeResourceSeller.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      type: "",
+      type: "PET",
       color: "",
       quantity: "",
       price: "",
-      owner: "",
-      forSale: "",
+      owner: "63814868af6e28739a94d90c",
+      forSale: 1,
     };
   }
 
@@ -38,10 +38,6 @@ export default class PublicarOferta extends Component {
     this.setState({ price: e.target.value });
   }
 
-  onChangeResourceSeller(e) {
-    this.setState({ seller: e.target.value });
-  }
-
   onSubmit(e) {
     e.preventDefault();
 
@@ -59,43 +55,80 @@ export default class PublicarOferta extends Component {
       .then((res) => console.log(res.data));
 
     this.setState({
-      type: "",
+      type: "PET",
       color: "",
       quantity: "",
       price: "",
-      owner: "",
-      forSale: "",
     });
   }
   render() {
     return (
       <Container fluid>
-        <Row>
-          <Col>
-            <Form>
+        <Form onSubmit={this.onSubmit}>
+          <Row>
+            <Col>
               <h4>Selecciona la categoría</h4>
               <Form.Group>
                 <Form.Check
                   type="radio"
                   name="type"
                   label="PET o PETE"
+                  value="PET"
+                  checked={this.state.type === "PET"}
+                  onChange={this.onChangeResourceType}
                 ></Form.Check>
-                <Form.Check type="radio" name="type" label="HDPE"></Form.Check>
-                <Form.Check type="radio" name="type" label="PVC"></Form.Check>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="HDPE"
+                  value="HDPE"
+                  checked={this.state.type === "HDPE"}
+                  onChange={this.onChangeResourceType}
+                ></Form.Check>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="PVC"
+                  value="PVC"
+                  checked={this.state.type === "PVC"}
+                  onChange={this.onChangeResourceType}
+                ></Form.Check>
                 <Form.Check
                   type="radio"
                   name="type"
                   label="LDPE o PEBD"
+                  value="LDPE"
+                  checked={this.state.type === "LDPE"}
+                  onChange={this.onChangeResourceType}
                 ></Form.Check>
-                <Form.Check type="radio" name="type" label="PP"></Form.Check>
-                <Form.Check type="radio" name="type" label="PS"></Form.Check>
-                <Form.Check type="radio" name="type" label="Otros"></Form.Check>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="PP"
+                  value="PP"
+                  checked={this.state.type === "PP"}
+                  onChange={this.onChangeResourceType}
+                ></Form.Check>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="PS"
+                  value="PS"
+                  checked={this.state.type === "PS"}
+                  onChange={this.onChangeResourceType}
+                ></Form.Check>
+                <Form.Check
+                  type="radio"
+                  name="type"
+                  label="Otros"
+                  value="Otros"
+                  checked={this.state.type === "Otros"}
+                  onChange={this.onChangeResourceType}
+                ></Form.Check>
               </Form.Group>
-            </Form>
-          </Col>
+            </Col>
 
-          <Col>
-            <Form>
+            <Col>
               <Form.Group controlId="Color">
                 <Form.Label>Color:</Form.Label>
                 <Form.Control
@@ -108,39 +141,35 @@ export default class PublicarOferta extends Component {
               <Form.Group controlId="Cantidad">
                 <Form.Label>Cantida disponible (kg):</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   value={this.state.quantity}
                   onChange={this.onChangeResourceQuantity}
+                  step="5"
                 />
               </Form.Group>
 
               <Form.Group controlId="Precio">
                 <Form.Label>Precio por kg:</Form.Label>
                 <Form.Control
-                  type="text"
-                  value={this.state.color}
-                  onChange={this.onChangeResourceColor}
+                  type="number"
+                  value={this.state.price}
+                  onChange={this.onChangeResourcePrice}
+                  step="1000"
                 />
               </Form.Group>
 
               <Button
-                variant="danger"
-                size="lg"
+                variant="success"
+                size="md"
                 block="block"
                 type="submit"
                 className="mt-4"
               >
                 Publicar Oferta
               </Button>
-            </Form>
-          </Col>
-          <Col>
-            <Form>
-              <h4>Descripción del producto:</h4>
-              <textarea name="" id="" cols="30" rows="15"></textarea>
-            </Form>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </Form>
       </Container>
     );
   }
