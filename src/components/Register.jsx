@@ -66,6 +66,7 @@ export default class Register extends Component {
         address: this.state.address,
         phone: this.state.phone,
         password: this.state.password,
+        balance: 300000,
       };
 
       axios
@@ -82,14 +83,14 @@ export default class Register extends Component {
         passwordC: "",
       });
     } else {
-      console.log("Las contraseñas no coinciden.");
+      alert("Las contraseñas no coinciden.");
     }
   }
 
   render() {
     return (
       <div className="form-wrapper">
-        <Form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit} style={{ marginBottom: "2rem" }}>
           <Form.Group controlId="Name">
             <Form.Label>Nombre</Form.Label>
             <Form.Control
@@ -118,7 +119,7 @@ export default class Register extends Component {
           </Form.Group>
 
           <Form.Group controlId="Address">
-            <Form.Label>Ciudad</Form.Label>
+            <Form.Label>Dirección</Form.Label>
             <Form.Control
               type="text"
               value={this.state.address}
@@ -138,7 +139,7 @@ export default class Register extends Component {
           <Form.Group controlId="Password">
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
-              type="text"
+              type="password"
               value={this.state.password}
               onChange={this.onChangeUserPassword}
             />
@@ -147,15 +148,15 @@ export default class Register extends Component {
           <Form.Group controlId="PasswordC">
             <Form.Label>Confirmar contraseña</Form.Label>
             <Form.Control
-              type="text"
+              type="password"
               value={this.state.passwordC}
               onChange={this.onChangeUserPasswordC}
             />
           </Form.Group>
 
           <Button
-            variant="danger"
-            size="lg"
+            variant="success"
+            size="md"
             block="block"
             type="submit"
             className="mt-4"

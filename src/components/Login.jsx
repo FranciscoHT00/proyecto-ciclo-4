@@ -17,7 +17,6 @@ export default class Login extends Component {
     };
   }
 
-
   onChangeUserEmail(e) {
     this.setState({ email: e.target.value });
   }
@@ -70,7 +69,6 @@ export default class Login extends Component {
             />
           </Form.Group>
 
-
           <Form.Group controlId="Password">
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
@@ -80,10 +78,9 @@ export default class Login extends Component {
             />
           </Form.Group>
 
-
           <Button
-            variant="danger"
-            size="lg"
+            variant="success"
+            size="md"
             block="block"
             type="submit"
             className="mt-4"
