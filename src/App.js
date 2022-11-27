@@ -14,13 +14,14 @@ import VerOfertas from "./components/VerOfertas";
 import PublicarOferta from "./components/PublicarOferta";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import VerPerfil from "./components/VerPerfil";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <header className="App-header">
-          <Navbar bg="custom" variant="dark">
+          <Navbar bg="success" variant="dark">
             <Container>
               <Navbar.Brand>
                 <Link to={"/"} className="nav-link">
@@ -38,6 +39,18 @@ function App() {
                 <Nav>
                   <Link to={"/publicar-oferta"} className="nav-link">
                     Publica una oferta
+                  </Link>
+                </Nav>
+
+                <Nav>
+                  <Link to={"/ver-perfil-1"} className="nav-link">
+                    Perfil Usuario 1
+                  </Link>
+                </Nav>
+
+                <Nav>
+                  <Link to={"/ver-perfil-2"} className="nav-link">
+                    Perfil Usuario 2
                   </Link>
                 </Nav>
 
@@ -70,12 +83,30 @@ function App() {
                   <Route
                     exact
                     path="/ver-ofertas"
-                    component={(props) => <VerOfertas {...props} />}
+                    component={(props) => (
+                      <VerOfertas id={"638148bdaf6e28739a94d90e"} />
+                    )}
                   />
                   <Route
                     exact
                     path="/publicar-oferta"
-                    component={(props) => <PublicarOferta {...props} />}
+                    component={(props) => (
+                      <PublicarOferta id={"63814868af6e28739a94d90c"} />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/ver-perfil-1"
+                    component={(props) => (
+                      <VerPerfil id={"63814868af6e28739a94d90c"} />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/ver-perfil-2"
+                    component={(props) => (
+                      <VerPerfil id={"638148bdaf6e28739a94d90e"} />
+                    )}
                   />
                   <Route
                     exact
