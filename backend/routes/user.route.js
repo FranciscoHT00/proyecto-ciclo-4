@@ -57,6 +57,24 @@ router.route("/update-user/:id").put((req, res, next) => {
   );
 });
 
+router.route("/update-balance/:id").patch((req, res, next) => {
+  userSchema.findByIdAndUpdate(
+    req.params.id,
+    {
+      $inc: { balance: req.body.newBalance },
+    },
+    (error, data) => {
+      if (error) {
+        console.log(error);
+        return next(error);
+      } else {
+        res.json(data);
+        console.log("Balance updated successfully!");
+      }
+    }
+  );
+});
+
 // BORRAR Usuario
 router.route("/delete-user/:id").delete((req, res, next) => {
   userSchema.findByIdAndRemove(req.params.id, (error, data) => {

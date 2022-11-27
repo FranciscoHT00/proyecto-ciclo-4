@@ -57,6 +57,24 @@ router.route("/update-resource/:id").put((req, res, next) => {
   );
 });
 
+router.route("/update-owner/:id").patch((req, res, next) => {
+  resourceSchema.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: { owner: req.body.newOwner },
+    },
+    (error, data) => {
+      if (error) {
+        console.log(error);
+        return next(error);
+      } else {
+        res.json(data);
+        console.log("Owner updated successfully!");
+      }
+    }
+  );
+});
+
 // BORRAR Recurso
 router.route("/delete-resource/:id").delete((req, res, next) => {
   resourceSchema.findByIdAndRemove(req.params.id, (error, data) => {

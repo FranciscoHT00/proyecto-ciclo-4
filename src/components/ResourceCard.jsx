@@ -7,9 +7,49 @@ export default class ResourceCard extends Component {
   constructor(props) {
     super(props);
     this.buyResource = this.buyResource.bind(this);
+
+    this.state = {
+      total: this.props.obj.quantity * this.props.obj.price,
+    };
   }
 
-  buyResource() {}
+  buyResource() {
+    const buyerNewBalance = {
+      newBalance: -1 * this.state.total,
+    };
+
+    const sellerNewBalance = {
+      newBalance: this.state.total,
+    };
+
+    const newOwner = {
+      newOwner: this.props.buyer,
+    };
+
+    axios
+      .patch(
+        "http://localhost:4000/users/update-balance/" + this.props.buyer,
+        buyerNewBalance
+      )
+      .then((res) => console.log(res.data));
+
+    axios
+      .patch(
+        "http://localhost:4000/users/update-balance/" + this.props.obj.owner,
+        sellerNewBalance
+      )
+      .then((res) => console.log(res.data));
+
+    axios
+      .patch(
+        "http://localhost:4000/resources/update-owner/" + this.props.obj._id,
+        newOwner
+      )
+      .then((res) => console.log(res.data));
+
+    alert("Recurso comprado correctamente!");
+    window.location.reload();
+  }
 
   render() {
     return (
@@ -25,7 +65,7 @@ export default class ResourceCard extends Component {
             Color: {this.props.obj.color} <br></br>
             Cantidad: {this.props.obj.quantity} kg <br></br>
             Precio: {this.props.obj.price} $/kg <br></br>
-            Total: {this.props.obj.price * this.props.obj.quantity} $
+            <strong>Total: {this.state.total} $</strong>
           </Card.Text>
           <Button variant="success" size="sm" onClick={this.buyResource}>
             Comprar

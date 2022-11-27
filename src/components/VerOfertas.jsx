@@ -8,7 +8,6 @@ export default class VerOfertas extends Component {
     super(props);
 
     this.state = {
-      userId: "63814868af6e28739a94d90c",
       resources: [],
     };
   }
@@ -17,8 +16,15 @@ export default class VerOfertas extends Component {
     axios
       .get("http://localhost:4000/resources/")
       .then((res) => {
+        var resources = [];
+        res.data.forEach((element, i) => {
+          if (element.owner !== this.props.id) {
+            resources[i] = element;
+          }
+        });
+
         this.setState({
-          resources: res.data,
+          resources: resources,
         });
       })
       .catch((error) => {
@@ -28,7 +34,7 @@ export default class VerOfertas extends Component {
 
   loadResources() {
     return this.state.resources.map((res, i) => {
-      return <ResourceCard obj={res} key={i} buyer={this.userId} />;
+      return <ResourceCard obj={res} key={i} buyer={this.props.id} />;
     });
   }
 

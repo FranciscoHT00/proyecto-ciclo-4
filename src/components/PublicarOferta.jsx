@@ -17,7 +17,7 @@ export default class PublicarOferta extends Component {
       color: "",
       quantity: "",
       price: "",
-      owner: "63814868af6e28739a94d90c",
+      owner: this.props.id,
       forSale: 1,
     };
   }
