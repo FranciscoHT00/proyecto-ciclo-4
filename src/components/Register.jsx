@@ -82,6 +82,8 @@ export default class Register extends Component {
         password: "",
         passwordC: "",
       });
+
+      alert("Usuario registrado exitosamente");
     } else {
       alert("Las contraseñas no coinciden.");
     }

@@ -103,7 +103,7 @@ export default class VerPerfil extends Component {
       )
       .then((res) => {
         console.log(res.data);
-        console.log("User successfully updated");
+        alert("Datos de usuario actualizados exitosamente!");
       })
       .catch((error) => {
         console.log(error);
