@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/proyecto-ciclo-4/static/css/main.c2c4fe95.css",
-    "main.js": "/proyecto-ciclo-4/static/js/main.e061b5a1.js",
+    "main.css": "/proyecto-ciclo-4/static/css/main.fdd05877.css",
+    "main.js": "/proyecto-ciclo-4/static/js/main.abc78b5c.js",
+    "static/media/inicio.png": "/proyecto-ciclo-4/static/media/inicio.aa389a23dd7b47a002f5.png",
+    "static/media/iconoReciclaje.png": "/proyecto-ciclo-4/static/media/iconoReciclaje.6229e76eb76630d6ae16.png",
     "index.html": "/proyecto-ciclo-4/index.html",
-    "main.c2c4fe95.css.map": "/proyecto-ciclo-4/static/css/main.c2c4fe95.css.map",
-    "main.e061b5a1.js.map": "/proyecto-ciclo-4/static/js/main.e061b5a1.js.map"
+    "main.fdd05877.css.map": "/proyecto-ciclo-4/static/css/main.fdd05877.css.map",
+    "main.abc78b5c.js.map": "/proyecto-ciclo-4/static/js/main.abc78b5c.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2c4fe95.css",
-    "static/js/main.e061b5a1.js"
+    "static/css/main.fdd05877.css",
+    "static/js/main.abc78b5c.js"
   ]
 }
